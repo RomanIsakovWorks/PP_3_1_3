@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -37,11 +37,11 @@ public class User<joinColumns, inverseJoinColumns> implements UserDetails {
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+    private Set<Role> roles;
 
     public User() {}
 
-    public User(String name, String lastName, String email, String username, String password, List<Role> roles) {
+    public User(String name, String lastName, String email, String username, String password, Set<Role> roles) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -96,11 +96,11 @@ public class User<joinColumns, inverseJoinColumns> implements UserDetails {
         this.password = password;
     }
 
-    public List<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 

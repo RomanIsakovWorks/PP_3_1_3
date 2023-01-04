@@ -1,4 +1,4 @@
-package spring_boot.dao;
+package spring_boot.repositories;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

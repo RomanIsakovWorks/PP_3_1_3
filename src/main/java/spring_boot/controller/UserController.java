@@ -1,14 +1,11 @@
 package spring_boot.controller;
 
-
-import org.springframework.security.core.userdetails.UserDetailsService;
 import spring_boot.model.User;
 import spring_boot.service.RoleService;
 import spring_boot.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import spring_boot.service.UserServiceImpl;
 import java.security.Principal;
 
 @Controller
@@ -18,7 +15,7 @@ public class UserController {
     private final UserService userService;
     private final RoleService roleService;
 
-    public UserController(UserService userService, UserDetailsService userDetailsService, UserServiceImpl userServiceImpl, RoleService roleService) {
+    public UserController(UserService userService, RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
     }

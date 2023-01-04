@@ -1,7 +1,6 @@
 package spring_boot.service;
 
 import spring_boot.model.User;
-
 import java.util.List;
 
 public interface UserService {
@@ -12,6 +11,6 @@ public interface UserService {
     void deleteUser(int id);
     void updateUser(int id, User user);
     Object getUser(int id);
-    public User findByUsername(String username);
+    User findByUsername(String username);
 
 }
